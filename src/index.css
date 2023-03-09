@@ -1,16 +1,237 @@
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-li,
-p {
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   margin: 0;
   padding: 0;
 }
-a {
-  color: inherit;
-  text-decoration: none;
+::selection {
+  background-color: #937ec784;
+}
+
+/* HEADER */
+#header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 4px solid #5d4991;
+  border-bottom: 2px solid#EDEDED;
+  flex-direction: column;
+  position: relative;
+  padding: 10px;
+}
+#title {
+  font-size: 35px;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+}
+#subtitle {
+  font-size: 12px;
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+  color: #717171;
+}
+#icon {
+  position: absolute;
+  left: 0;
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+
+/* MIDDLE */
+#middle {
+  display: flex;
+}
+
+
+/* SIDE */
+#enableSide {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-size: x-large;
+  font-weight: bolder;
+}
+#sideBox {
+  display: flex;
+  width: 17%;
+  height: 100vh;
+  flex-direction: column;
+  border-right: 2px solid#EDEDED;
+  position: relative;
+}
+#sideNoteMessage {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  color: #838483;
+  margin-top: 25px
+}
+#sideTitle {
+  display: flex;
+  font-size: 26px;
+  font-weight: 700;
+  padding-bottom: 7px;
+  padding-top: 7px;
+  position: relative;
+  border-bottom: 2px solid#EDEDED;
+}
+#add {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-size: x-large;
+  right: 0;
+  position: absolute;
+  font-size: 20px;
+  top: 0;
+  bottom: 0;
+  width: 50px;
+}
+#add:hover {
+  color: white;
+  background-color: #5d4991;
+}
+.sideData {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 2px solid#EDEDED;
+}
+.sideData.active {
+  flex-direction: column;
+  border-bottom: 2px solid#EDEDED;
+  background-color: #5d4991;
+  color: white;
+}
+.sideData:hover {
+  background-color: #5d4991;
+  color: white;
+}
+#datetime {
+  margin-left: 11px;
+  font-size: small;
+  color: #838483;
+}
+#noteTitle {
+  margin-top: 3px;
+  font-size: 20px;
+  font-weight: 700;
+  margin-left: 11px;
+}
+#lastModified {
+  font-size: 12px;
+  font-weight: 500;
+  color: #717171;
+  margin-bottom: 5px;
+  margin-left: 7px;
+}
+#noteBody {
+  font-size: 14px;
+  margin-bottom: 5px;
+  margin-left: 7px;
+}
+
+
+/* MAIN */
+#mainBox {
+  width: 83%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+#mainNoteMessage {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  align-items: center;
+  color: #838483;
+  margin-top: 350px;
+}
+#noteTop {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid white;
+  align-items: center;
+  flex-direction: row;
+}
+#noteTopText {
+  border: none;
+  background-color: transparent;
+  box-shadow: none;
+  outline: none;
+  font-size: 24px;
+  padding-left: 10px;
+  font-weight: 600;
+}
+#noteTopText::placeholder {
+  color: black;
+}
+#newNoteContent {
+  padding-left: 16px;
+  font-size: 13px;
+}
+#currentDate {
+  padding-left: 10px;
+}
+#calendarbutton {
+  background: none;
+  border: none;
+  color: black;
+}
+#calendarbutton:hover {
+  color: #007AFF;
+}
+
+
+/* FUNCTIONALITY */
+#delete {
+  cursor: pointer;
+  border: none;
+  background-color: inherit;
+  width: 60px;
+  height: 60px;
+  font-size: medium;
+}
+#delete:hover {
+  background-color: #5d4991;
+  color: white;
+}
+#save {
+  cursor: pointer;
+  border: none;
+  background-color: inherit;
+  width: 60px;
+  height: 60px;
+  font-size: medium;
+}
+#save:hover {
+  background-color: #5d4991;
+  color: white;
+}
+#edit {
+  cursor: pointer;
+  border: none;
+  background-color: inherit;
+  width: 60px;
+  height: 60px;
+  font-size: medium;
+}
+#edit:hover {
+  background-color: #5d4991;
+  color: white;
+}
+.ql-container.ql-snow {
+  border: none !important;
+  height: calc(100vh-100);
+  border: 2px solid#EDEDED;
+  margin-left: -1px;
+  padding: 0;
+}
+.ql-toolbar.ql-snow { 
+  border-right: none !important;
+  border-left: none !important;
+  border-top: none !important;
+  border-bottom: 2px solid#EDEDED !important;
 }

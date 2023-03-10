@@ -32,7 +32,7 @@ body {
   padding: 0;
   color: #717171;
 }
-#icon {
+#toggle {
   position: absolute;
   left: 0;
   margin-left: 15px;
@@ -57,7 +57,7 @@ body {
 #enableSide:hover {
   color: #f7d828;
 }
-#sideBox {
+#sideBar {
   display: flex;
   width: 17%;
   height: 100vh;
@@ -65,7 +65,7 @@ body {
   border-right: 3px solid#EDEDED;
   position: relative;
 }
-#sideNoteMessage {
+#sideNotePreview {
   font-size: 1.5rem;
   font-weight: bold;
   text-align: center;
@@ -98,18 +98,18 @@ body {
   color: white;
   background-color: #f7d828cb;
 }
-.sideData {
+.sideNoteBox {
   display: flex;
   flex-direction: column;
   border-bottom: 2px solid#EDEDED;
 }
-.sideData.active {
+.sideNoteBox.active {
   flex-direction: column;
   border-bottom: 2px solid#EDEDED;
   background-color: #5d4991;
   color: white;
 }
-.sideData:hover {
+.sideNoteBox:hover {
   background-color: #5d4991e7;
   color: white;
 }
@@ -118,27 +118,22 @@ body {
   font-size: small;
   color: #838483;
 }
-#noteTitle {
+#noteHeader {
   margin-top: 3px;
   font-size: 20px;
   font-weight: 700;
   margin-left: 11px;
 }
-#noteBody {
-  font-size: 14px;
-  margin-bottom: 5px;
-  margin-left: 7px;
-}
 
 
 /* MAIN */
-#mainBox {
+#mainComp {
   width: 83%;
   height: 100vh;
   display: flex;
   flex-direction: column;
 }
-#mainNoteMessage {
+#mainDirectionMessage {
   font-size: 2rem;
   font-weight: bold;
   text-align: center;
@@ -164,25 +159,25 @@ body {
 #noteTopText::placeholder {
   color: black;
 }
-#newNoteContent {
-  padding-left: 16px;
-  font-size: 13px;
-}
 #currentDate {
   padding-left: 10px;
 }
-#calendarbutton {
+#calendarSelect {
   background: none;
   border: none;
   color: black;
 }
-#calendarbutton:hover {
+#calendarSelect:hover {
   color: #007AFF;
+}
+#newNoteContent {
+  padding-left: 16px;
+  font-size: 13px;
 }
 
 
 /* FUNCTIONALITY */
-#delete {
+#edit {
   cursor: pointer;
   border: none;
   background-color: inherit;
@@ -190,7 +185,7 @@ body {
   height: 60px;
   font-size: 35px;
 }
-#delete:hover {
+#edit:hover {
   background-color: #5d4991;
   color: white;
 }
@@ -206,7 +201,7 @@ body {
   background-color: #5d4991;
   color: white;
 }
-#edit {
+#delete {
   cursor: pointer;
   border: none;
   background-color: inherit;
@@ -214,7 +209,7 @@ body {
   height: 60px;
   font-size: 35px;
 }
-#edit:hover {
+#delete:hover {
   background-color: #5d4991;
   color: white;
 }

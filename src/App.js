@@ -95,7 +95,7 @@ function App() {
       <div id="header">
         <div id="title">Lotion</div>
         <div id="subtitle">You Got Eczema?</div>
-        <div id="icon">
+        <div id="toggle">
           <button id="enableSide" onClick={toggleSide}>
             &#9776;
           </button>
@@ -131,9 +131,9 @@ function App() {
         )}
         {((!newNoteAdded && noteList.length > 0 && !currentNote) || noteList.length == 0) && (
           <div
-            id="mainBox"
+            id="mainComp"
             style={enableSide ? { width: "80%" } : { width: "100%" }}>
-            <div id="mainNoteMessage">Select a note or create a new one</div>
+            <div id="mainDirectionMessage">&#x2665;Select a note or create a new one&#x2665;</div>
           </div>
         )} 
       </div>

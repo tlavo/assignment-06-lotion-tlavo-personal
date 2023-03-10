@@ -37,20 +37,20 @@ function Side({
 
   if ((!newNoteAdded && noteList.length == 0) || noteList.length == 0) {
     return (    
-      <div id="sideBox">
+      <div id="sideBar">
         <div id="sideTitle"> &nbsp;Notes
           <button onClick={add} id="add"> 
             +
           </button>
         </div>
-        <div id="sideNoteMessage">Click + to Add Notes</div>
+        <div id="sideNotePreview">Click + to Add Notes</div>
       </div>
     );
   }
 
   return (
     <>
-      <div id="sideBox">
+      <div id="sideBar">
         <div id="sideTitle"> &nbsp;Notes
           <button onClick={add} id="add">
             +
@@ -66,12 +66,12 @@ function Side({
             <Link to={`/notes/${note.id}/edit`} style={{ textDecoration: 'none', color: 'inherit' }}>
                 <div
                 key={note.id}
-                className={`sideData ${note.id === currentNote && "active"}`}
+                className={`sideNoteBox ${note.id === currentNote && "active"}`}
                 onClick={() => {
                     setCurrentNote(note.id);
                 }}
                 >
-                <div id="noteTitle">{note.title}</div>
+                <div id="noteHeader">{note.title}</div>
                 <div id="datetime">{formatDate(note.date)}</div>
                 <ReactQuill
                     readOnly={true}

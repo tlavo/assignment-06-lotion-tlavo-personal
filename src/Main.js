@@ -53,7 +53,7 @@ function Main({
   return (
     <>
       <div
-        id="mainBox"
+        id="mainComp"
         style={{
           overflowY: "scroll",
           height: "100vh", ...(enableSide ? { width: "80%" } : { width: "100%" }),
@@ -71,7 +71,7 @@ function Main({
 
             <div id="currentDate">
               <input
-                id="calendarbutton"
+                id="calendarSelect"
                 type="datetime-local"
                 defaultValue={new Date(note.date - 25200000)
                   .toISOString()

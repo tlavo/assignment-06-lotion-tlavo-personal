@@ -6,8 +6,8 @@ import "react-quill/dist/quill.snow.css";
 function Side({
   noteList,
   add,
-  currentNote,
-  setCurrentNote,
+  currNote,
+  setCurrNote,
   newNoteAdded,
 }) {
   const { noteId } = useParams();
@@ -15,11 +15,11 @@ function Side({
   useEffect(() => {
     const index = noteList.findIndex((note) => note.id === Number(noteId));
     if (index >= 0) {
-      setCurrentNote(noteList[index].id);
+      setCurrNote(noteList[index].id);
     }
-  }, [setCurrentNote, noteList, noteId]);
+  }, [setCurrNote, noteList, noteId]);
 
-  const options = {
+  const timeUnits = {
     year: "numeric",
     month: "long",
     day: "numeric",
@@ -28,7 +28,7 @@ function Side({
   };
 
   const formatDate = (when) => {
-    const formatted = new Date(when).toLocaleString("en-US", options);
+    const formatted = new Date(when).toLocaleString("en-US", timeUnits);
     if (formatted === "Invalid Date") {
       return "";
     }
@@ -66,9 +66,9 @@ function Side({
             <Link to={`/notes/${note.id}/edit`} style={{ textDecoration: 'none', color: 'inherit' }}>
                 <div
                 key={note.id}
-                className={`sideNoteBox ${note.id === currentNote && "active"}`}
+                className={`sideNoteBox ${note.id === currNote && "active"}`}
                 onClick={() => {
-                    setCurrentNote(note.id);
+                    setCurrNote(note.id);
                 }}
                 >
                 <div id="noteHeader">{note.title}</div>

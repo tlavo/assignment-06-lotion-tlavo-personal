@@ -159,7 +159,7 @@ body {
 #noteTopText::placeholder {
   color: black;
 }
-#currentDate {
+#currDate {
   padding-left: 10px;
 }
 #calendarSelect {
@@ -176,7 +176,23 @@ body {
 }
 
 
-/* FUNCTIONALITY */
+/* Specific Styling */
+.ql-container.ql-snow {
+  border: none !important;
+  height: calc(100vh-100);
+  border: 2px solid #EDEDED;
+  margin-left: -1px;
+  padding: 0;
+}
+.ql-toolbar.ql-snow { 
+  border-right: none !important;
+  border-left: none !important;
+  border-top: none !important;
+  border-bottom: 2px solid #EDEDED !important;
+}
+
+
+/* Functionality */
 #edit {
   cursor: pointer;
   border: none;
@@ -201,7 +217,7 @@ body {
   background-color: #5d4991;
   color: white;
 }
-#delete {
+#del {
   cursor: pointer;
   border: none;
   background-color: inherit;
@@ -209,20 +225,7 @@ body {
   height: 60px;
   font-size: 35px;
 }
-#delete:hover {
+#del:hover {
   background-color: #5d4991;
   color: white;
-}
-.ql-container.ql-snow {
-  border: none !important;
-  height: calc(100vh-100);
-  border: 2px solid #EDEDED;
-  margin-left: -1px;
-  padding: 0;
-}
-.ql-toolbar.ql-snow { 
-  border-right: none !important;
-  border-left: none !important;
-  border-top: none !important;
-  border-bottom: 2px solid #EDEDED !important;
 }

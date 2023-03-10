@@ -5,10 +5,10 @@ import { useNavigate } from "react-router-dom";
 
 function Main({
   save,
-  deleteNote,
+  del,
   enableSide,
-  getCurrentNote,
-  currentNote,
+  getCurrNote,
+  currNote,
   note,
 }) {
   const [noteContent, setNoteContent] = useState("");
@@ -18,34 +18,34 @@ function Main({
   const navigate = useNavigate();
 
   useEffect(() => {
-    console.log(getCurrentNote().body);
-    console.log(getCurrentNote().title);
-    setNoteContent(getCurrentNote().body);
-    setTitle(getCurrentNote().title);
-  }, [currentNote]);
+    console.log(getCurrNote().body);
+    console.log(getCurrNote().title);
+    setNoteContent(getCurrNote().body);
+    setTitle(getCurrNote().title);
+  }, [currNote]);
 
-  const handleTitleChange = (event) => {
+  const controlTitleChange = (event) => {
     setTitle(event.target.value);
   };
 
-  const handleChange = (value) => {
+  const controlChange = (value) => {
     setNoteContent(value);
   };
 
-  const handleEdit = () => {
+  const controlEdit = () => {
     setEditing(false);
-    navigate(`/notes/${currentNote}/edit`); 
+    navigate(`/notes/${currNote}/edit`); 
   };
 
-  const handleSave = () => {
+  const controlSave = () => {
     console.log(typeof date);
     const note = {
-      id: currentNote,
+      id: currNote,
       title: document.getElementById("noteTopText").value,
       date: date,
       body: noteContent,
     };
-    navigate(`/notes/${currentNote}`); 
+    navigate(`/notes/${currNote}`); 
     save(note);
     setEditing(true);
   };
@@ -65,11 +65,11 @@ function Main({
               id="noteTopText"
               placeholder="Untitled"
               value={title}
-              onChange={handleTitleChange}
+              onChange={controlTitleChange}
               autoFocus
             ></input>
 
-            <div id="currentDate">
+            <div id="currDate">
               <input
                 id="calendarSelect"
                 type="datetime-local"
@@ -83,23 +83,23 @@ function Main({
 
           <div id="rightTop">
             {editing ? (
-              <button onClick={handleEdit} id="edit">
+              <button onClick={controlEdit} id="edit">
                 &#x270E;
               </button>
             ) : (
-              <button onClick={handleSave}  id="save">
+              <button onClick={controlSave}  id="save">
                 &#x1F5F9;
               </button>
             )}
 
             <button
               onClick={() => {
-                const currentNote = getCurrentNote();
-                if (currentNote) {
-                  deleteNote(currentNote.id);
+                const currNote = getCurrNote();
+                if (currNote) {
+                  del(currNote.id);
                 }
               }}
-              id="delete">
+              id="del">
                 &#x1F5F7;
             </button>
           </div>
@@ -110,7 +110,7 @@ function Main({
             <ReactQuill
               placeholder="Take a note..."
               value={noteContent}
-              onChange={handleChange}
+              onChange={controlChange}
             ></ReactQuill>
           </div>
         ) : (<div id="newNoteContent" dangerouslySetInnerHTML={{__html: noteContent}}></div>)}

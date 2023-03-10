@@ -8,7 +8,7 @@ function App() {
     localStorage.noteList ? JSON.parse(localStorage.noteList) : []
   );
 
-  const [currentNote, setCurrentNote] = useState(false);
+  const [currNote, setCurrNote] = useState(false);
 
   useEffect(() => {
     if (!localStorage.noteList) {
@@ -21,7 +21,7 @@ function App() {
     localStorage.setItem("noteList", JSON.stringify(noteList));
   }, [noteList]);
 
-  const [newNoteAdded, setnewNoteAdded] = useState(false);
+  const [newNoteAdded, setNewNoteAdded] = useState(false);
   const [enableSide, setEnableSide] = useState(true);
   const [mainWidth, setMainWidth] = useState("100%");
   const [text, setText] = useState("");
@@ -52,20 +52,20 @@ function App() {
       date: Date.now(),
     };
     setNoteList([...noteList, newNote]);
-    setnewNoteAdded(true);
-    setCurrentNote(newNote.id);
+    setNewNoteAdded(true);
+    setCurrNote(newNote.id);
   };
 
-  const deleteNote = (noteId) => {
-    const answer = window.confirm("Are you sure you want to delete note: \"" + getCurrentNote().title + "\"");
+  const del = (noteId) => {
+    const answer = window.confirm("Are you sure you want to delete note: \"" + getCurrNote().title + "\"");
     if (!answer) return;
   
     const newNoteList = noteList.filter((note) => note.id !== noteId);
-    localStorage.removeItem(currentNote.id);
+    localStorage.removeItem(currNote.id);
     setNoteList(newNoteList);
   
-    const currentIndex = noteList.findIndex((note) => note.id === noteId);
-    const nextNoteIndex = currentIndex === 0 ? 1 : currentIndex - 1;
+    const currIndex = noteList.findIndex((note) => note.id === noteId);
+    const nextNoteIndex = currIndex === 0 ? 1 : currIndex - 1;
     let nextNoteId;
     if (newNoteList.length > 0) {
       if (nextNoteIndex === newNoteList.length) {
@@ -77,12 +77,12 @@ function App() {
       navigate(`/notes`);
       return;
     }
-    setCurrentNote(nextNoteId);
+    setCurrNote(nextNoteId);
     navigate(`/notes/${nextNoteId}/edit`);
   };
 
-  function getCurrentNote() {
-    return noteList.find((note) => note.id == currentNote);
+  function getCurrNote() {
+    return noteList.find((note) => note.id == currNote);
   }
 
   function toggleSide() {
@@ -106,8 +106,8 @@ function App() {
           <Side
             noteList={noteList}
             add={add}
-            currentNote={currentNote}
-            setCurrentNote={setCurrentNote}
+            currNote={currNote}
+            setCurrNote={setCurrNote}
             newNoteAdded={newNoteAdded}
             textChange={textChange}
             text={text}
@@ -115,21 +115,21 @@ function App() {
         )}
         {noteList.map(
           (note) =>
-            note.id === currentNote && (
+            note.id === currNote && (
               <Main
                 note={note}
                 key={note.id}
                 noteList={noteList}
-                deleteNote={deleteNote}
-                getCurrentNote={getCurrentNote}
+                del={del}
+                getCurrNote={getCurrNote}
                 save={save}
                 newNoteAdded={newNoteAdded}
                 enableSide={enableSide}
-                currentNote={currentNote}
+                currNote={currNote}
               ></Main>
             )
         )}
-        {((!newNoteAdded && noteList.length > 0 && !currentNote) || noteList.length == 0) && (
+        {((!newNoteAdded && noteList.length > 0 && !currNote) || noteList.length == 0) && (
           <div
             id="mainComp"
             style={enableSide ? { width: "80%" } : { width: "100%" }}>

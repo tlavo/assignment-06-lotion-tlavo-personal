@@ -44,14 +44,16 @@ function App() {
   };
 
   const add = () => {
+    const maxId = noteList.length > 0 ? Math.max(...noteList.map(note => note.id)) : 0;
     const newNote = {
-      id: noteList.length + 1,
-      title: "Untitled Note",
+      id: maxId + 1,
+      title: "Untitled",
       body: "",
-      date: new Date().getTime(),
+      date: Date.now(),
     };
-    setNoteList([newNote, ...noteList]);
+    setNoteList([...noteList, newNote]);
     setnewNoteAdded(true);
+    setCurrentNote(newNote.id);
   };
 
   const deleteNote = (noteId) => {

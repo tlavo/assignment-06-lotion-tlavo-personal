@@ -13,11 +13,11 @@ function Side({
   const { noteId } = useParams();
 
   useEffect(() => {
-    const index = Number(noteId) - 1;
+    const index = noteList.findIndex((note) => note.id === Number(noteId));
     if (index >= 0) {
       setCurrentNote(noteList[index].id);
     }
-  }, [setCurrentNote, noteList, useParams]);
+  }, [setCurrentNote, noteList, noteId]);
 
   const options = {
     year: "numeric",

@@ -84,7 +84,7 @@ function Main({
           <div id="rightTop">
             {editing ? (
               <button onClick={handleEdit} id="edit">
-                Edit
+                &#x270E;
               </button>
             ) : (
               <button onClick={handleSave}  id="save">

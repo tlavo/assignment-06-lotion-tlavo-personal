@@ -85,7 +85,7 @@ function App() {
 
   function toggleSide() {
     setEnableSide(!enableSide);
-    setMainWidth({ width: !enableSide ? "83%" : "100%" });
+    setMainWidth({ width: !enableSide ? "80%" : "100%" });
   }
 
   return (
@@ -127,6 +127,13 @@ function App() {
               ></Main>
             )
         )}
+        {((!newNoteAdded && noteList.length > 0 && !currentNote) || noteList.length == 0) && (
+          <div
+            id="mainBox"
+            style={enableSide ? { width: "80%" } : { width: "100%" }}>
+            <div id="mainNoteMessage">Select a note or create a new one</div>
+          </div>
+        )} 
       </div>
     </>
   );

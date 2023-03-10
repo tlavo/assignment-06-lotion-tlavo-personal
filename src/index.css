@@ -1,11 +1,11 @@
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   margin: 0;
   padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 ::selection {
-  background-color: #937ec784;
+  background-color: #937ec779;
 }
 
 /* HEADER */
@@ -13,7 +13,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-top: 4px solid #5d4991;
+  border-top: 10px solid #f7d828cb;
   border-bottom: 2px solid#EDEDED;
   flex-direction: column;
   position: relative;
@@ -26,7 +26,7 @@ body {
   padding: 0;
 }
 #subtitle {
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 500;
   margin: 0;
   padding: 0;
@@ -51,15 +51,18 @@ body {
   cursor: pointer;
   border: none;
   background: none;
-  font-size: x-large;
+  font-size: 30px;
   font-weight: bolder;
+}
+#enableSide:hover {
+  color: #f7d828;
 }
 #sideBox {
   display: flex;
   width: 17%;
   height: 100vh;
   flex-direction: column;
-  border-right: 2px solid#EDEDED;
+  border-right: 3px solid#EDEDED;
   position: relative;
 }
 #sideNoteMessage {
@@ -76,6 +79,7 @@ body {
   padding-bottom: 7px;
   padding-top: 7px;
   position: relative;
+  border-top: 5px solid #5d4991;
   border-bottom: 2px solid#EDEDED;
 }
 #add {
@@ -85,14 +89,14 @@ body {
   font-size: x-large;
   right: 0;
   position: absolute;
-  font-size: 20px;
+  font-size: 30px;
   top: 0;
   bottom: 0;
   width: 50px;
 }
 #add:hover {
   color: white;
-  background-color: #5d4991;
+  background-color: #f7d828cb;
 }
 .sideData {
   display: flex;
@@ -152,15 +156,14 @@ body {
 #noteTop {
   display: flex;
   justify-content: space-between;
-  border-bottom: 2px solid white;
+  border-top: 5px solid #5d4991;
+  border-bottom: 2px solid #EDEDED;
   align-items: center;
   flex-direction: row;
 }
 #noteTopText {
   border: none;
   background-color: transparent;
-  box-shadow: none;
-  outline: none;
   font-size: 24px;
   padding-left: 10px;
   font-weight: 600;
@@ -192,7 +195,7 @@ body {
   background-color: inherit;
   width: 60px;
   height: 60px;
-  font-size: medium;
+  font-size: 35px;
 }
 #delete:hover {
   background-color: #5d4991;
@@ -204,7 +207,7 @@ body {
   background-color: inherit;
   width: 60px;
   height: 60px;
-  font-size: medium;
+  font-size: 35px;
 }
 #save:hover {
   background-color: #5d4991;
@@ -225,7 +228,7 @@ body {
 .ql-container.ql-snow {
   border: none !important;
   height: calc(100vh-100);
-  border: 2px solid#EDEDED;
+  border: 2px solid #EDEDED;
   margin-left: -1px;
   padding: 0;
 }
@@ -233,5 +236,5 @@ body {
   border-right: none !important;
   border-left: none !important;
   border-top: none !important;
-  border-bottom: 2px solid#EDEDED !important;
+  border-bottom: 2px solid #EDEDED !important;
 }

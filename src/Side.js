@@ -35,11 +35,10 @@ function Side({
     return formatted;
   };
 
-  if (!newNoteAdded && noteList.length == 0) {
-    return (
+  if ((!newNoteAdded && noteList.length == 0) || noteList.length == 0) {
+    return (    
       <div id="sideBox">
-        <div id="sideTitle">
-          &nbsp;Notes
+        <div id="sideTitle"> &nbsp;Notes
           <button onClick={add} id="add"> 
             +
           </button>
@@ -52,8 +51,7 @@ function Side({
   return (
     <>
       <div id="sideBox">
-        <div id="sideTitle">
-          &nbsp;Notes
+        <div id="sideTitle"> &nbsp;Notes
           <button onClick={add} id="add">
             +
           </button>

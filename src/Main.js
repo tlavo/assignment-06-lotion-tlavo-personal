@@ -4,10 +4,8 @@ import "react-quill/dist/quill.snow.css";
 import { useNavigate } from "react-router-dom";
 
 function Main({
-  noteList,
   save,
   deleteNote,
-  newNoteAdded,
   enableSide,
   getCurrentNote,
   currentNote,
@@ -52,15 +50,6 @@ function Main({
     setEditing(true);
   };
 
-  if (!newNoteAdded && noteList.length == 0) {//--------------------------------------------NEED TO FIX
-    return (
-      <div
-        id="mainBox"
-        style={enableSide ? { width: "80%" } : { width: "100%" }}>
-        <div id="mainNoteMessage">Select a note or create a new one</div>
-      </div>
-    );
-  }
   return (
     <>
       <div
@@ -99,7 +88,7 @@ function Main({
               </button>
             ) : (
               <button onClick={handleSave}  id="save">
-                Save
+                &#x1F5F9;
               </button>
             )}
 
@@ -111,7 +100,7 @@ function Main({
                 }
               }}
               id="delete">
-              Delete
+                &#x1F5F7;
             </button>
           </div>
         </div>

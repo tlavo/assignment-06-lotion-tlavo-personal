@@ -76,6 +76,6 @@ In this assignment, you will create a Notion-like application named Lotion with 
 - The editor. There needs to be a text editor to write a note
 - The deployment. The application needs to be deployed on Netlify the way we saw in the class
 
-## Bonous points
+## Bonus points
 - Tags. They need to be searchable. That is, when a user is picking a tag for a note, the application should suggest similar tags
 - Sorting and searching for the notes
